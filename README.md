@@ -1,2 +1,2 @@
 # proyecto-informatico
-Prácticas de proyecto
+Prácticas de Proyecto Informático
