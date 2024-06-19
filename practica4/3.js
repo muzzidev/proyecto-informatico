@@ -4,76 +4,21 @@ el valor numérico en Ohms de la resistencia. Los colores en orden del 0 al 9 so
 amarillo, verde, azul, violeta, gris y blanco. No usar if ... else.*/
 
 const argv = process.argv.slice(2);
-function valorResistencia(color1, color2, multiplicador){
-  switch (color2) {
-    case 'negro':
-      color2 = 0;
-      break;
-    case 'marron':
-      color2 = 1;
-      break;
-    case 'rojo':
-      color2 = 2;
-      break;
-    case 'naranja':
-      color2 = 3;
-      break;
-    case 'amarillo':
-      color2 = 4;
-      break;
-    case 'verde':
-      color2 = 5;
-      break;       
-    case 'azul':
-      color2 = 6;
-      break;
-    case 'violeta':
-      color2 = 7;
-      break;
-    case 'gris':
-      color2 = 8;
-      break; 
-    case 'blanco':
-      color2 = 9;
-      break;
-    default:
-      return "por favor introduzca un color valido";
+function valorResistencia(b1, b2, b3){
+  let colores = {
+    negro: 0,
+    marron: 1,
+    rojo: 2,
+    naranja: 3,
+    amarillo: 4,
+    verde: 5,
+    azul: 6,
+    violeta: 7,
+    gris: 8,
+    blanco: 9    
   }
-  switch (color1) {
-    case 'negro':
-      color1 = 0;
-      break;
-    case 'marron':
-      color1 = 1;
-      break;
-    case 'rojo':
-      color1 = 2;
-      break;
-    case 'naranja':
-      color1 = 3;
-      break;
-    case 'amarillo':
-      color1 = 4;
-      break;
-    case 'verde':
-      color1 = 5;
-      break;       
-    case 'azul':
-      color1 = 6;
-      break;
-    case 'violeta':
-      color1 = 7;
-      break;
-    case 'gris':
-      color1 = 8;
-      break; 
-    case 'blanco':
-      color1 = 9;
-      break;
-    default:
-      return "por favor introduzca un color valido";
-  }
-  return (color1 + color2) * multiplicador + " Ohms";
+  return (colores[b1]*10 + colores[b2]) * 10 ** b3 + " Ohms";
 }
+
 
 console.log(valorResistencia(argv[0], argv[1], argv[2]));
