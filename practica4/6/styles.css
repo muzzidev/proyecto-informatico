@@ -1,0 +1,38 @@
+body {
+    margin: 0 auto;
+    background-color: rgb(176, 175, 175);
+}
+
+h1 {
+    text-align: center;
+    font-size: 30px;
+}
+
+p {
+    font-size: 25px;
+}
+
+main {
+    margin: 0 15%
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+}
+
+img {
+    width: 70%;
+    height: 70%;
+    object-fit: cover;
+    border: 3px solid black;
+}
+
+.form{
+    display: flex;
+    background-color: aquamarine;
+    
+}
