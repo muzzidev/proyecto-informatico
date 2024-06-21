@@ -20,5 +20,4 @@ function valorResistencia(b1, b2, b3){
   return (colores[b1]*10 + colores[b2]) * 10 ** b3 + " Ohms";
 }
 
-
 console.log(valorResistencia(argv[0], argv[1], argv[2]));
