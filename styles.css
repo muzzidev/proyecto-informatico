@@ -8,10 +8,10 @@ html {
 }
 body{
     display: grid;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
     font-family: monospace;
-    justify-content: center;
-    align-content: center;
 }
 a{
     background-color: black;
@@ -21,11 +21,14 @@ a{
     padding: 10px;
 }
 ul{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    gap: 1rem;
     margin: 0;
     padding: 0;
 }
 ul li{
     list-style: none;
-    padding: 0;;
-    margin: 0;
+    margin: 1rem;
 }
