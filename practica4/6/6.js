@@ -1,18 +1,12 @@
 let formulario = document.querySelector(".form");
-let botonLimpiar = document.querySelector(".boton-limpiar")
-
 formulario.addEventListener("submit", (event) => isLeap(event))
-botonLimpiar.addEventListener("click", (event) => clean(event));
 
 function isLeap(event) {
     event.preventDefault();
+    if (document.querySelector(".resultado")) document.querySelector(".resultado").remove();
     let contenido = event.target.num.value;
-    let es_bisiesto = document.createElement("h3");
+    let es_bisiesto = document.createElement("h1");
+    es_bisiesto.classList.add("resultado");
     es_bisiesto.textContent = (contenido % 4 == 0 && contenido % 100 != 0) || (contenido % 400 == 0) ? "Es bisiesto" : "No es bisiesto";
-    event.target.append(es_bisiesto);
-}
-    
-function clean(event) {
-    event.preventDefault();
-    document.querySelector("h3").remove();
+    document.body.append(es_bisiesto);
 }
