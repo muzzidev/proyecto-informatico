@@ -24,7 +24,7 @@ ul{
     display: grid;
     justify-content: center;
     align-content: center;
-    gap: 1rem;
+    gap: 2  rem;
     margin: 0;
     padding: 0;
 }
