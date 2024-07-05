@@ -1,7 +1,7 @@
 body {
     font-family: monospace;
     margin: 0 auto;
-    background-color: rgb(103, 197, 103);
+    background-color: rgb(255, 0, 0);
 }
 h1 {
     text-align: center;
@@ -39,7 +39,8 @@ img {
     height: 50px;
     width: 100px;
     font-size: 30px;
-    text-align: center;    
+    text-align: center;
+    border-radius: 0px;
 }
 .form label{
     text-align: center;
