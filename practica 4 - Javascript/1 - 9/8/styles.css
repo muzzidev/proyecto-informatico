@@ -1,0 +1,29 @@
+body {
+  font-family: monospace;
+  margin: 0 auto;
+  background-color: rgb(182, 182, 182);
+}
+h1 {
+  text-align: center;
+  font-size: 30px;
+}
+p {
+  font-size: 15px;
+  line-height: 15px;
+  font-weight: bold;
+}
+main {
+  margin: 0 15%;
+}
+.boton {
+  display: block;
+  margin: 100px auto;
+  font-size: 40px;
+  padding: 10px;
+  background-color: rgb(119, 196, 119);
+}
+.burbuja{
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
