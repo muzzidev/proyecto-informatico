@@ -28,7 +28,7 @@ function generarPais() {
   imagen.src = pais.flags.png;
   contenedor.append(imagen);
   botonCorrecto.textContent = pais.name.common;
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 5; i++) {
     if (i == idBotonCorrecto) continue;
     let botonFalso = document.getElementById(i);
     botonFalso.textContent = paises[i].name.common;
