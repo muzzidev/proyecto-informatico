@@ -5,6 +5,16 @@ let form = document.querySelector(".formulario");
 let paises = [];
 let contenedor = document.querySelector(".bandera");
 let mensaje = document.createElement("h1");
+let cantidadGanadas = 0;
+let cantidadPerdidas = 0;
+if (localStorage.getItem('ganadas')) {
+  cantidadGanadas = localStorage.getItem('ganadas');
+}
+if (localStorage.getItem('perdidas')) {
+  cantidadPerdidas = localStorage.getItem('perdidas');
+}
+let ganadas = document.querySelector(".ganadas");
+let perdidas = document.querySelector(".perdidas");
 let botonCorrecto;
 const url = "https://restcountries.com/v3.1/all";
 
@@ -13,6 +23,8 @@ fetch(url)
   .then(data => {
     paises = data
     generarPais();
+    ganadas.textContent = "Ganadas: " + cantidadGanadas;
+    perdidas.textContent = "Perdidas: " + cantidadPerdidas;
   })
 
 function generarPais() {
@@ -30,8 +42,9 @@ function generarPais() {
   botonCorrecto.textContent = pais.name.common;
   for (let i = 0; i < 5; i++) {
     if (i == idBotonCorrecto) continue;
+    let idBotonFalso = Math.floor(Math.random() * paises.length)
     let botonFalso = document.getElementById(i);
-    botonFalso.textContent = paises[i].name.common;
+    botonFalso.textContent = paises[idBotonFalso].name.common;
   }
   console.log(pais.name.common);
 }
@@ -43,10 +56,16 @@ function comprobar(e) {
   if (e.target.id == botonCorrecto.id) {
     mensaje.textContent = "correcto loco";
     mensaje.style.color = "green";
+    cantidadGanadas++;
+    ganadas.textContent = "Ganadas: " + cantidadGanadas;
+    localStorage.setItem('ganadas', cantidadGanadas);
     generarPais();
   } else {
     mensaje.textContent = "otra vez";
     mensaje.style.color = "red";
+    cantidadPerdidas++;
+    perdidas.textContent = "Perdidas: " + cantidadPerdidas;
+    localStorage.setItem('perdidas', cantidadPerdidas);
   }
 
   document.body.append(mensaje);
