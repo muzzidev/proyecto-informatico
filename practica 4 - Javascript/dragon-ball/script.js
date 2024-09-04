@@ -1,4 +1,4 @@
-const url = "https://dragonball-api.com/api/characters";
+const url = "https://dragonball-api.com/api/characters?limit=58";
 
 let contenedor = document.querySelector(".contenedor");
 let personajesArray = [];
