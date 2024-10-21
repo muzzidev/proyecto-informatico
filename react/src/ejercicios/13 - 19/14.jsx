@@ -2,7 +2,7 @@
 de un array */
 
 function Nav(props) {
-  let array = ["casa", "indice", "buscar"]
+  let array = ["casa", "indice", "buscar"];
   return (
     <>
       <ul>
