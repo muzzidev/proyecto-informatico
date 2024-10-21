@@ -1,5 +1,5 @@
 # Proyecto Informático - Prácticas
 Prácticas de Proyecto Informático
 
-## Web
+## Webs
 [Página principal](https://muzzidev.github.io/proyecto-informatico/)

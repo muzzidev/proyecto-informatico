@@ -17,8 +17,8 @@ fetch(url)
 
 function createArray(photos) {
   for (let i = 0; i < 10; i++){
-    photosArray.push(photos[photo]);
-    photo++;
+    photosArray.push(photos[i]);
+    i
   }
 }
 

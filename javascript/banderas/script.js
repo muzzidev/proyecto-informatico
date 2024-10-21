@@ -21,6 +21,8 @@ const url = "https://restcountries.com/v3.1/all";
 fetch(url)
   .then(res => res.json())
   .then(data => {
+    console.log(typeof data);
+    
     paises = data
     generarPais();
     ganadas.textContent = "Ganadas: " + cantidadGanadas;
