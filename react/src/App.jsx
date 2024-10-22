@@ -5,6 +5,7 @@ import Header from './ejercicios/13 - 19/13.jsx';
 import Nav from './ejercicios/13 - 19/14.jsx';
 import H1 from './ejercicios/13 - 19/15.jsx';
 import Prod from './ejercicios/13 - 19/16.jsx';
+import Pokemon from './ejercicios/20 - 29/23.jsx';
 
 import warcraft from './assets/warcraft.png'
 import whatsoup from './assets/whatsoup.png'
@@ -20,6 +21,7 @@ function App() {
             <li><Link to="/ejercicio14">Ejercicio 14</Link></li>
             <li><Link to="/ejercicio15">Ejercicio 15</Link></li>
             <li><Link to="/ejercicio16">Ejercicio 16</Link></li>
+            <li><Link to="/ejercicio23">Ejercicio 23</Link></li>
           </ul>
         </nav>
 
@@ -35,6 +37,7 @@ function App() {
               imagen={warcraft} 
             />} 
           />
+          <Route path='/ejercicio23' element={<Pokemon />}/>
         </Routes>
         
       </div>
