@@ -1,4 +1,3 @@
-// src/App.js
 import './index.css'
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
