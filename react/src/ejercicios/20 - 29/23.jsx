@@ -10,7 +10,7 @@ function Pokemon() {
 
   useEffect(() => {
     if (nombre) {
-      axios.get(`https://pokeapi.co/api/v2/pokemon/${nombre}`)
+      axios.get(`https://pokeapi.co/api/v2/pokemon/${nombre.toLowerCase()}`)
         .then(res => {
           setimagen(res.data.sprites.front_default);
         })
@@ -24,7 +24,7 @@ function Pokemon() {
   return (
     <>
       <div>
-        <h1>Buscar Pokémon</h1>
+        <h1>Buscar pokemon en inglés</h1>
         <input 
           type="text" 
           defaultValue={nombre} 
@@ -32,8 +32,9 @@ function Pokemon() {
         />
       </div>
 
-      <div>
+      <div className="card">
         <img src={imagen} alt={nombre} />
+        <h1>el pokemon es {nombre}</h1>
       </div>
     </>
   );
