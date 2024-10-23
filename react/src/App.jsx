@@ -7,7 +7,9 @@ import H1 from './ejercicios/13 - 19/15.jsx';
 import Prod from './ejercicios/13 - 19/16.jsx';
 import Pokemon from './ejercicios/20 - 29/23.jsx';
 import Trivia from './ejercicios/20 - 29/29.jsx';
+import Feriado from './ejercicios/20 - 29/24.jsx';
 import Todo from './ejercicios/Todo.jsx';
+import Welcome from './ejercicios/Welcome.jsx';
 
 import warcraft from './assets/warcraft.png'
 import whatsoup from './assets/whatsoup.png'
@@ -24,8 +26,10 @@ function App() {
             <li><Link to="/ejercicio15">Ejercicio 15</Link></li>
             <li><Link to="/ejercicio16">Ejercicio 16</Link></li>
             <li><Link to="/ejercicio23">Ejercicio 23</Link></li>
+            <li><Link to="/ejercicio24">Ejercicio 24</Link></li>
             <li><Link to="/ejercicio29">Ejercicio 29</Link></li>
             <li><Link to="/Todo">Todo app</Link></li>
+            <li><Link to="/Welcome">Welcome app</Link></li>
           </ul>
         </nav>
 
@@ -42,8 +46,10 @@ function App() {
             />} 
           />
           <Route path='/ejercicio23' element={<Pokemon />}/>
+          <Route path='/ejercicio24' element={<Feriado />}/>
           <Route path='/Todo' element={<Todo />}/>
           <Route path='/ejercicio29' element={<Trivia />}/>
+          <Route path='/Welcome' element={<Welcome />}/>
         </Routes>
         
       </div>
