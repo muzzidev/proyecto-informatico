@@ -1,0 +1,28 @@
+body {
+    font-family: monospace;
+    margin: 0 auto;
+    background-color: rgb(103, 197, 103);
+}
+h1 {
+    text-align: center;
+    font-size: 30px;
+}
+p {
+    font-size: 15px;
+    line-height: 15px;
+    font-weight: bold;
+}
+main {
+    margin: 0 15%
+}
+.menu{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+.elemento{
+  padding: 0 30px;
+  display: block;
+  text-align: center;
+  background-color: red;
+}
