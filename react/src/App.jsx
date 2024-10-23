@@ -10,6 +10,7 @@ import Trivia from './ejercicios/20 - 29/29.jsx';
 import Feriado from './ejercicios/20 - 29/24.jsx';
 import Todo from './ejercicios/Todo.jsx';
 import Welcome from './ejercicios/Welcome.jsx';
+import Pipe from './ejercicios/Pipe.jsx';
 
 import warcraft from './assets/warcraft.png'
 import whatsoup from './assets/whatsoup.png'
@@ -30,11 +31,18 @@ function App() {
             <li><Link to="/ejercicio29">Ejercicio 29</Link></li>
             <li><Link to="/Todo">Todo app</Link></li>
             <li><Link to="/Welcome">Welcome app</Link></li>
+            <li><Link to="/Pipe">Pipe</Link></li>
           </ul>
         </nav>
 
         <Routes>
-          <Route path="/ejercicio13" element={<Header logo={whatsoup} nombre="Whatsoup"></Header>} />
+          <Route path="/ejercicio13" element={
+          <Header
+            logo={whatsoup}
+            nombre="Whatsoup"
+            alt="logo de la empresa"
+          ></Header>
+          } />
           <Route path="/ejercicio14" element={<Nav />} />
           <Route path="/ejercicio15" element={<H1 />} />
           <Route path="/ejercicio16" element={
@@ -50,6 +58,7 @@ function App() {
           <Route path='/Todo' element={<Todo />}/>
           <Route path='/ejercicio29' element={<Trivia />}/>
           <Route path='/Welcome' element={<Welcome />}/>
+          <Route path='/Pipe' element={<Pipe />}/>
         </Routes>
         
       </div>

@@ -4,7 +4,7 @@ function Header(props) {
   return (
     <>
       <header>{props.nombre}</header>
-      <img src={props.logo} alt="logo de la empresa" />
+      <img src={props.logo} alt={props.alt} />
     </>
   )  
 }
