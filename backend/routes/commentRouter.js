@@ -17,8 +17,8 @@ app.delete('api/comments/:id', (req, res) => {
     .then(() => res.status(200).json({ msg: "Comment deleted" }));
 })
 
-//METODOS PUT
 app.put('api/comments/:id', (req, res) => {
   Comment.findOneAndUpdate({ id: req.params.id }, req.body, { new: true })
-    .then(comment => res.status(200).json(comment));
+    .then(comment => res.status(200).json(comment))
+    .then(() => res.status(200).json({ msg: "Comment updated" }));
 })

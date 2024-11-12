@@ -21,18 +21,9 @@ app.use(express.json());
 mongoose.connect(DB)
   .then(() => console.log('DB connected'));
 
-import commentRouter from '/commentRouter'
+import commentRouter from './routes/commentRouter.js'
 
-//ESQUEMAS DE LOS USUARIOS Y COMENTARIOS
-const UserSchema = new mongoose.Schema({
-  id: { type: Number, unique: true },
-  name: String
-})
-const CommentSchema = new mongoose.Schema({
-  id: { type: Number, unique: true },
-  title: String,
-  content: String
-})
+
 
 //EXPORTO LOS MODELOS DE LOS ESQUEMAS
 const User = mongoose.model('User', UserSchema);
