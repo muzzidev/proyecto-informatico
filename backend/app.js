@@ -1,72 +1,27 @@
-/* 7. Escribir una API con dos colecciones: usuarios y comentarios. La API debe tener rutas para crear, consultar,
-modificar y borrar ambos recursos. Separar el código en rutas, controladores y modelos, cada uno en su archivo
-separado. */
+import express from 'express';
+import mongoose from 'mongoose';
+import morgan from 'morgan';
+import userRouter from './routes/userRouter.js';
+import commentRouter from './routes/commentRouter.js';
 
-import express from 'express'
-import mongoose from 'mongoose'
-import cors from 'cors'
-import morgan from 'morgan'
-
-
-const PORT = process.env.PORT = 3000;
-const DB   = process.env.DB = 'mongodb://127.0.0.1/api';
+const PORT = 3000;
+const DB   = 'mongodb://localhost/';
 
 const app = express();
 
-app.use(morgan('dev'));
-app.use(cors());
-app.use(express.json());
+app.use(morgan('dev'));  
+app.use(express.json()); 
 
-//SE CONECTA
 mongoose.connect(DB)
-  .then(() => console.log('DB connected'));
+  .then(() => console.log('DB conectada'));
 
-import commentRouter from './routes/commentRouter.js'
+app.use('/users', userRouter);
+app.use('/comments', commentRouter);
 
-
-
-//EXPORTO LOS MODELOS DE LOS ESQUEMAS
-const User = mongoose.model('User', UserSchema);
-const Comment = mongoose.model('Comment', CommentSchema);
-
-//METODOS GET
-
-app.get('/api/users', (req, res) => {
-  User.find()
-    .then(users => res.status(200).json(users)); 
-})
-
-app.get('/api/users/:id', (req, res) => {
-  User.findOne({ id: req.params.id })
-    .then(user => res.status(200).json(user)); 
-})
-
-
-//METODOS POST
-
-app.post('/api/users', (req, res) => {
-  const newUser = new User(req.body);
-  newUser.save()
-    .then(() => res.status(200).json({ msg: 'User created' }));
-})
-
-
-//METODOS DELETE
-
-app.delete('/api/users/:id', (req, res) => {
-  User.deleteOne({ id: req.params.id })
-    .then(() => res.status(200).json({ msg: 'User deleted!' }));
+app.use((req, res) => {
+  res.status(404).json({ msg: 'No encontrado' }); // responde 404 Not found
 });
 
-
-
-
-//MIDDLEWAR DE ERRORES Y DE CONECCION A LA DB
-app.use((req, res) => {
-  res.status(404).json({ msg: 'Not found'});
-})
-
 app.listen(PORT, () => {
-  console.log('Server working');
-  
-})
+  console.log('Server andando');
+});
