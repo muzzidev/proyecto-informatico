@@ -21,6 +21,8 @@ app.use(express.json());
 mongoose.connect(DB)
   .then(() => console.log('DB connected'));
 
+import commentRouter from '/commentRouter'
+
 //ESQUEMAS DE LOS USUARIOS Y COMENTARIOS
 const UserSchema = new mongoose.Schema({
   id: { type: Number, unique: true },
@@ -37,10 +39,6 @@ const User = mongoose.model('User', UserSchema);
 const Comment = mongoose.model('Comment', CommentSchema);
 
 //METODOS GET
-app.get('/api/comments', (req, res) => {
-  Comment.find()
-    .then(comments => res.status(200).json(comments)); 
-})
 
 app.get('/api/users', (req, res) => {
   User.find()
@@ -52,10 +50,6 @@ app.get('/api/users/:id', (req, res) => {
     .then(user => res.status(200).json(user)); 
 })
 
-app.get('/api/comments/:id', (req, res) => {
-  Comment.findOne({ id: req.params.id })
-    .then(comment => res.status(200).json(comment)); 
-})
 
 //METODOS POST
 
@@ -63,12 +57,6 @@ app.post('/api/users', (req, res) => {
   const newUser = new User(req.body);
   newUser.save()
     .then(() => res.status(200).json({ msg: 'User created' }));
-})
-
-app.post('/api/comments', (req, res) => {
-  const newComment = new Comment(req.body);
-  newComment.save()
-    .then(() => res.status(200).json({ msg: 'Comment created' }));
 })
 
 
@@ -79,16 +67,7 @@ app.delete('/api/users/:id', (req, res) => {
     .then(() => res.status(200).json({ msg: 'User deleted!' }));
 });
 
-app.delete('api/comments/:id', (req, res) => {
-  Comment.deleteOne({ id: req.params.id })
-    .then(() => res.status(200).json({ msg: "Comment deleted" }));
-})
 
-//METODOS PUT
-app.put('api/comments/:id', (req, res) => {
-  Comment.findOneAndUpdate({ id: req.params.id }, req.body, { new: true })
-    .then(comment => res.status(200).json(comment));
-})
 
 
 //MIDDLEWAR DE ERRORES Y DE CONECCION A LA DB
